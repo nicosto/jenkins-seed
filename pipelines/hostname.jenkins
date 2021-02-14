@@ -1,0 +1,17 @@
+#!/usr/bin/env groovy
+
+def label = "k8s-plugin"
+
+podTemplate(label: label,
+        containers: [
+                containerTemplate(name: 'hostname', image: 'alpine', ttyEnabled: true, command: '/bin/sh'),
+        ],
+        ) {
+    node(label) {
+        stage('Run shell') {
+            container('hostname') {
+                sh 'hostname'
+            }
+        }
+    }
+}
