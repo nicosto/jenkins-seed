@@ -1,13 +1,13 @@
 #!/usr/bin/env groovy
 
-String basePath = 'k8s-plugin'
+String basePath = 'k8s-seeding-tests'
 
 folder(basePath) {
-    description 'k8s Folder'
+    description 'k8s tests on Seeding jobs with Jenkins'
 }
 
-pipelineJob("$basePath/k8s-hostname") {
-    displayName('Kubernetes Hostname')
+pipelineJob("$basePath/k8s-hostname-1") {
+    displayName('Kubernetes Hostname test 1')
 
     logRotator {
         numToKeep(10)
@@ -30,7 +30,7 @@ pipelineJob("$basePath/k8s-hostname") {
                     branches('main')
                 }
             }
-            scriptPath('pipelines/hostname.jenkins')
+            scriptPath('pipelines/hostname-1.jenkins')
         }
     }
 }
