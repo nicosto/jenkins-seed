@@ -30,7 +30,7 @@ pipelineJob("$basePath/k8s-hostname") {
                     branches('main')
                 }
             }
-            scriptPath('pipelines/hostname_1.jenkins')
+            scriptPath('pipelines/hostname.jenkins')
         }
     }
 }
