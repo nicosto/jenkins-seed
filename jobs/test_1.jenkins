@@ -6,7 +6,7 @@ folder(basePath) {
     description 'k8s tests on Seeding jobs with Jenkins'
 }
 
-pipelineJob("$basePath/k8s-hostname") {
+pipelineJob("$basePath/k8s-hostname-1") {
     displayName('Kubernetes Hostname test 1')
 
     logRotator {
